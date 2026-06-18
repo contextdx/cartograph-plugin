@@ -15,7 +15,7 @@ Credentials live in ONE place — the config file, never the chat:
 {
   "bindingToken": "YWJjMTIzLXV1aWQ6ZGVmNDU2LXV1aWQ",
   "apiSecret": "ck_cp_live_xxx",
-  "baseUrl": "https://api.contextdx.dev",
+  "baseUrl": "https://api.contextdx.com",
   "branch": "main",
   "boardSlug": "my-project-overview",
   "excludePaths": ["node_modules", "dist", ".git", "coverage"],
@@ -36,7 +36,7 @@ Credentials live in ONE place — the config file, never the chat:
   {
     "bindingToken": "",
     "apiSecret": "",
-    "baseUrl": "https://api.contextdx.dev",
+    "baseUrl": "https://api.contextdx.com",
     "branch": "main",
     "boardSlug": "",
     "excludePaths": ["node_modules", "dist", ".git", "coverage"],

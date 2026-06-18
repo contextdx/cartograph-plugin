@@ -1,6 +1,6 @@
 # Cartograph
 
-The `cdx-code` plugin — codebase architecture analysis for [ContextDX Portal](https://contextdx.dev). Discovers your project's components, classifies them against your org's archetype catalogue, maps relationships, and syncs the result as a layered architecture board you can review and share.
+The `cdx-code` plugin — codebase architecture analysis for [ContextDX Portal](https://contextdx.com). Discovers your project's components, classifies them against your org's archetype catalogue, maps relationships, and syncs the result as a layered architecture board you can review and share.
 
 ## Supported languages
 

@@ -74,7 +74,7 @@ Display status in organized sections:
 
 ```
 ## Configuration
-Base URL: https://api.contextdx.dev
+Base URL: https://api.contextdx.com
 Branch: main
 
 ## Archetypes

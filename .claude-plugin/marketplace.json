@@ -7,7 +7,7 @@
   },
   "metadata": {
     "description": "ContextDx plugins for codebase architecture analysis, visualization, and sync to ContextDX Portal",
-    "version": "0.4.12"
+    "version": "0.4.13"
   },
   "plugins": [
     {
@@ -15,13 +15,13 @@
       "displayName": "Cartograph",
       "source": "./plugins/cdx-code",
       "description": "Real-time codebase architecture analysis and visualization for ContextDX Portal — analyze, sync, run server-defined insights, and check status from Claude Code.",
-      "version": "0.4.12",
+      "version": "0.4.13",
       "author": {
         "name": "ContextDx",
         "email": "contact@contextdx.com"
       },
       "repository": "https://github.com/contextdx/cartograph-plugin",
-      "homepage": "https://contextdx.dev",
+      "homepage": "https://contextdx.com",
       "license": "BUSL-1.1",
       "keywords": [
         "architecture",

@@ -22,7 +22,7 @@ write_skeleton() {
 {
   "bindingToken": "",
   "apiSecret": "",
-  "baseUrl": "https://api.contextdx.dev",
+  "baseUrl": "https://api.contextdx.com",
   "branch": "main",
   "boardSlug": "",
   "excludePaths": ["node_modules", "dist", ".git", "coverage"],

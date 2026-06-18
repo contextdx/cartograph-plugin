@@ -47,7 +47,7 @@ Read `.contextdx/config.json` and extract ClaudeCodePlugin credentials:
 
 - `bindingToken`: Combined authentication token
 - `apiSecret`: API secret (starts with `ck_cp_live_`)
-- `baseUrl`: API endpoint (default: `https://api.contextdx.dev`)
+- `baseUrl`: API endpoint (default: `https://api.contextdx.com`)
 - `branch`: Git branch name for sync
 - `boardSlug`: Root board slug
 
