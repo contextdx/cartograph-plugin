@@ -1,0 +1,20 @@
+{
+  "name": "cdx-code",
+  "version": "0.4.11",
+  "description": "Real-time codebase architecture analysis and visualization for ContextDX Portal. Analyzes codebases across multiple languages, detects tech stacks, identifies component relationships, and syncs to ContextDX for collaborative architecture boards. Supports server-defined insight analysis skills. Includes configuration, sync, status, and insights commands.",
+  "author": {
+    "name": "ContextDx",
+    "email": "contact@contextdx.com"
+  },
+  "repository": "https://github.com/contextdx/cartograph-plugin",
+  "license": "BUSL-1.1",
+  "keywords": [
+    "architecture",
+    "analysis",
+    "c4-diagram",
+    "contextdx",
+    "visualization",
+    "javascript",
+    "typescript"
+  ]
+}
