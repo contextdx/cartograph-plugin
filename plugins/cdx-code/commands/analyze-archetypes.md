@@ -41,7 +41,7 @@ Parse the `archetypes[]`, `nodeArchetypes[]`, and `edgeArchetypes[]` from the JS
 
 Invoke the `architecture-analyzer` agent with `--archetypes-only` mode. The agent runs `/analyze` Steps 0, 3, 4, 5 (project detection → tech stack detection → component discovery + archetype classification) but stops there. It does **not** produce board JSON, edges, hierarchies, or manifest updates.
 
-The agent's output is a payload conforming to `ArchetypeProposalPayloadSchema` (see [packages/shared/src/validators.ts](../../../packages/shared/src/validators.ts)):
+The agent's output is a payload conforming to `ArchetypeProposalPayloadSchema`:
 
 ```json
 {
@@ -85,7 +85,7 @@ If `proposed[]` and `improvements[]` are both empty:
      - service [split] → http_service / worker_service — 12 components affected
    ```
 
-2. If `--dry-run`: skip the prompt. Validate the payload via [scripts/cdx-propose-archetypes.js](../../../packages/shared/src/cli/claude-code-plugin-propose-archetypes.ts) with `--dry-run` (which POSTs `?dryRun=true` to the server). Print result, do **not** write the lock. Exit 0.
+2. If `--dry-run`: skip the prompt. Validate the payload via [scripts/cdx-propose-archetypes.js](../scripts/cdx-propose-archetypes.js) with `--dry-run` (which POSTs `?dryRun=true` to the server). Print result, do **not** write the lock. Exit 0.
 
 3. If `--skip-submit`: write `.contextdx/proposed-archetypes.json`. Write the lock with `skippedAt: <ts>` (scan completed but submission was opted out — Phase 1 is *not* settled). Print: *"Proposals written for manual review. Edit the file and re-run /analyze-archetypes when ready. /analyze will re-prompt until Phase 1 finishes."* Exit 0.
 
@@ -94,7 +94,7 @@ If `proposed[]` and `improvements[]` are both empty:
    - **Edit first** — write `.contextdx/proposed-archetypes.json`. Write the lock with `skippedAt: <ts>` (same rationale as `--skip-submit` — Phase 1 is mid-flight). Print: *"Edit the file then re-run /analyze-archetypes to submit."* Exit 0.
    - **Skip and proceed** — write the lock with `skippedAt: <ts>`. Print: *"Skip is one-shot: every subsequent /analyze will re-prompt until you run /analyze-archetypes and submit (or confirm no gaps). Running /analyze now will type affected components with misfit archetypes. Re-run /analyze-archetypes then /analyze --clean after the missing archetypes land in the catalogue."* Exit 0.
 
-> **Lock-shape note:** in all three branches the lock must include `commitHash` and `catalogueHash` (from Step 1) so [cdx-precondition.js](../../../packages/shared/src/cli/claude-code-plugin-precondition.ts) can detect when subsequent /analyze runs are still aligned with this scan. `skippedAt` is always non-null in these branches — that field is what makes the precondition re-prompt.
+> **Lock-shape note:** in all three branches the lock must include `commitHash` and `catalogueHash` (from Step 1) so [cdx-precondition.js](../scripts/cdx-precondition.js) can detect when subsequent /analyze runs are still aligned with this scan. `skippedAt` is always non-null in these branches — that field is what makes the precondition re-prompt.
 
 ### Step 4: Submit
 
@@ -118,7 +118,7 @@ On success, print: *"N proposals submitted for admin review. The catalogue will 
 
 ### Step 5: Persist lock
 
-`.contextdx/archetype-analysis.lock.json` is the single source of truth used by [cdx-precondition.js](../../../packages/shared/src/cli/claude-code-plugin-precondition.ts) (invoked by `/analyze` Step -1) and `/status` (display). Fields:
+`.contextdx/archetype-analysis.lock.json` is the single source of truth used by [cdx-precondition.js](../scripts/cdx-precondition.js) (invoked by `/analyze` Step -1) and `/status` (display). Fields:
 
 - `commitHash` — git HEAD at scan time
 - `catalogueHash` — hash of archetype-name list at scan time

@@ -48,7 +48,7 @@ The agent runs in one of two modes, chosen by the calling command. The classific
 **Archetypes-only mode** (used by `/analyze-archetypes`)
 - Runs Steps 1, 2, 3 only. Stops before Step 4 (Hierarchy Building) and Step 5 (Metadata & Descriptions).
 - Does **not** emit board JSON, edges, drill-down candidates, or manifest updates.
-- Emits a single payload conforming to `ArchetypeProposalPayloadSchema` (see [packages/shared/src/validators.ts](../../../packages/shared/src/validators.ts)):
+- Emits a single payload conforming to `ArchetypeProposalPayloadSchema`:
 
   ```json
   {

@@ -46,7 +46,7 @@ If only one board exists, syncs it. If multiple exist, lists them and asks which
 Read `.contextdx/config.json` and extract ClaudeCodePlugin credentials:
 
 - `bindingToken`: Combined authentication token
-- `apiSecret`: API secret (starts with `bb_`)
+- `apiSecret`: API secret (starts with `ck_cp_live_`)
 - `baseUrl`: API endpoint (default: `https://api.contextdx.dev`)
 - `branch`: Git branch name for sync
 - `boardSlug`: Root board slug

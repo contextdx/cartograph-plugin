@@ -49,6 +49,7 @@ If `/analyze` is invoked before `/analyze-archetypes` has been run for the curre
 | `/insights` | List available insight skills and run one against the current board |
 | `/insights <skill-slug>` | Run a specific insight skill directly |
 | `/insights --all` | Run every available insight skill |
+| `/demo-insights [count] [--board <slug>]` | Seed a board with a few demonstrative, path-rich insights to showcase the insights feature |
 | `/status` | Show config state, archetype precondition, analysis summary, and per-board sync status |
 
 ## Layered boards
@@ -76,7 +77,7 @@ If your codebase has patterns that don't fit any existing archetype well, `/anal
 
 The two-phase split (`/analyze-archetypes` then `/analyze`) is the supported workflow. `/analyze` will detect a stale or missing precondition and prompt to run Phase 1 first.
 
-Run `/insights --list` or open the ContextDX UI to see the current archetype catalogue.
+Open the ContextDX UI to see the current archetype catalogue — the plugin fetches it automatically during `/analyze-archetypes` and `/analyze`.
 
 ## Output format
 
