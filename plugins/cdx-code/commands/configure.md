@@ -19,7 +19,8 @@ Credentials live in ONE place — the config file, never the chat:
   "branch": "main",
   "boardSlug": "my-project-overview",
   "excludePaths": ["node_modules", "dist", ".git", "coverage"],
-  "includeTests": false
+  "includeTests": false,
+  "includeSourceReferences": true
 }
 ```
 
@@ -40,7 +41,8 @@ Credentials live in ONE place — the config file, never the chat:
     "branch": "main",
     "boardSlug": "",
     "excludePaths": ["node_modules", "dist", ".git", "coverage"],
-    "includeTests": false
+    "includeTests": false,
+    "includeSourceReferences": true
   }
   ```
 
@@ -61,7 +63,7 @@ Tell the user to open `.contextdx/config.json` in their editor and fill in:
 - `bindingToken` — base64url-encoded `orgId:bindingId`
 - `apiSecret` — format `ck_cp_live_` followed by an alphanumeric string
 - `branch` — must match the branch configured on the workboard binding (default `main`)
-- Optional: `baseUrl`, `excludePaths`, `includeTests` (the skeleton already has working defaults)
+- Optional: `baseUrl`, `excludePaths`, `includeTests`, `includeSourceReferences` (defaults to `true`; set `false` to omit file-path source references from synced nodes/edges) — the skeleton already has working defaults
 
 How to obtain the credentials:
 

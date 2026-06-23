@@ -37,10 +37,13 @@ Show the user every command this plugin ships, what each one does, and the plugi
    | Command | Arguments | Description |
    | ------- | --------- | ----------- |
    | `/<plugin.name>:<command.name>` | `<command.argumentHint>` or — | <command.description> |
+
+   > **Opting out of source references:** synced nodes and edges include file-path source references (and links into your git host) by default. To omit them from what `/sync` pushes, set `"includeSourceReferences": false` in `.contextdx/config.json`.
    ```
 
    - List commands in the order returned by the script (alphabetical).
    - For commands with no `argumentHint`, show `—` (em-dash) in the Arguments column.
    - If `plugin.description` is long, render it on its own paragraph above the table, not wrapped into the table.
+   - Always include the source-references opt-out note after the table — it's static guidance, not part of the script's JSON output.
 
 4. If the script exits non-zero or returns `success: false`, print the `error` field and stop. Do not fabricate command lists.
